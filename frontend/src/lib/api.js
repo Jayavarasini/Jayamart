@@ -1,5 +1,7 @@
 // Thin fetch wrapper for the JayaMart REST API.
-const BASE_URL = '/api';
+// In development this stays relative ('/api' via the Vite proxy); in cloud
+// deployments VITE_API_URL can point at the remote backend's /api base.
+const BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 export function getToken() {
   return localStorage.getItem('jm_token');
