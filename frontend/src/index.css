@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas text-navy-900 font-sans;
+  }
+
+  ::selection {
+    @apply bg-lavender-200 text-navy-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-navy-600 text-white shadow-sm hover:bg-navy-700 focus:ring-navy-300;
+  }
+
+  .btn-secondary {
+    @apply btn bg-lavender-100 text-lavender-800 hover:bg-lavender-200 focus:ring-lavender-300;
+  }
+
+  .btn-outline {
+    @apply btn border border-navy-200 bg-white text-navy-700 hover:border-navy-300 hover:bg-navy-50 focus:ring-navy-200;
+  }
+
+  .btn-danger {
+    @apply btn bg-rose-50 text-rose-600 hover:bg-rose-100 focus:ring-rose-200;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-white shadow-card;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-navy-900 placeholder:text-gray-400 focus:border-navy-400 focus:outline-none focus:ring-2 focus:ring-lavender-200;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-navy-800;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold tracking-tight text-navy-900 sm:text-3xl;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold;
+  }
+
+  .table-head {
+    @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-navy-500;
+  }
+
+  .table-cell {
+    @apply px-4 py-3 align-middle text-sm text-navy-800;
+  }
+}
+
+/* Slim scrollbars for the horizontal category rail on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes jm-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: jm-fade-up 0.35s ease-out both;
+}

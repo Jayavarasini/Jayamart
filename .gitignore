@@ -1,0 +1,22 @@
+# ---- JayaMart repository rules ----
+
+# Dependencies (never commit - huge and reinstallable with npm install)
+node_modules/
+
+# Environment secrets (passwords, JWT secret, API keys) - never commit
+.env
+.env.*
+!.env.example
+
+# Build output (recreated with npm run build)
+frontend/dist/
+
+# Portable MySQL server + live database files (~1 GB, machine-local;
+# the data/ folder also contains real user/order data)
+tools/
+
+# Accidental lockfile generated in the project root (no package.json there)
+/package-lock.json
+
+# Logs
+*.log
